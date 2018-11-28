@@ -1,5 +1,7 @@
 # Creating lists of exercises and muscle group categories
 
+import random
+
 Abs = [
     'Bodyweight Shoulder Taps',
     'Bodyweight Bird Dog',
@@ -53,41 +55,87 @@ Legs = [
 
 
 
-Stretches = []
+# Stretches = []
 
 
-# change list of lists into single list
-
-UpperBody = [Arms, Back, Chest]
+UpperBody = Arms + Back + Chest
 
 CoreBody = Abs
 
 LowerBody = Legs
 
-FullBody = [UpperBody, CoreBody, LowerBody]
+FullBody = UpperBody + CoreBody + LowerBody
+
+
+# user select ...
+# Duration = {easy:10, medium:20, hard:30}
+
+import time
+
+
+def countdown(t):
+    while t:
+        mins, secs = divmod(t, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        print(timeformat, end='\r')
+        time.sleep(1)
+        t -= 1
+    print('Next!\n\n')
+
+
+def demo(muscle, duration):
+    counter = 0
+    if duration == 'easy':
+        while counter < 10:
+            print(random.choice(muscle))
+            counter += 1
+            countdown(2)
+        else:
+            print('YAY, U NOT FAT!')
+    elif duration == 'medium':
+        while counter < 20:
+            print(random.choice(muscle))
+            counter += 1
+            countdown(2)
+        else:
+            print('YAY, U NOT FAT!')
+    else:
+        while counter < 30:
+            print(random.choice(muscle))
+            counter += 1
+            countdown(2)
+        else:
+            print('YAY, U NOT FAT!')
 
 
 
-Duration = []
 
-MuscleGroup = []
+# muscle = input('Select Muscle Group: ')
+# duration = input('Select your duration: ')
 
 
 
 def main():
-    # print(Abs)
-    # print(Arms)
-    # print(Back)
-    # print(Chest)
-    # print(Legs)
+    demo(FullBody, 'easy')
 
-    # print(CoreBody)
-    # print(UpperBody)
-    # print(LowerBody)
-    # print(FullBody)
+#     muscle = input('Select Muscle Group: ')
+#     duration = input('Select your duration: ')
 
-    # print(Duration)
-    # print(MuscleGroup)
+#     demo(muscle, duration)
+#     # print(Abs)
+#     # print(Arms)
+#     # print(Back)
+#     # print(Chest)
+#     # print(Legs)
+
+#     # print(CoreBody)
+#     # print(UpperBody)
+#     # print(LowerBody)
+#     # print(FullBody)
+
+#     # print(Duration)
+
+    
     
 
 if __name__ == '__main__':
