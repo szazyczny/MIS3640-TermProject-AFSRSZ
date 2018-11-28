@@ -1,7 +1,6 @@
 import sqlite3
 db = sqlite3.connect('data.sqlite')
 
-
 for row in db.execute('select * from MuscleGroup'):
     print(row)
 
