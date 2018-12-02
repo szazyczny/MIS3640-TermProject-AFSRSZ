@@ -12,12 +12,10 @@
     </audio>
 
     <div>
-        <form method="POST" action="{{ url_for('custom') }}" style="display:inline">
-            <input name="time" class="time-input" placeholder="e.g. 12/30s/20m/2h">
-            <input type="submit" class="startButton" value="START">
         </form>
-        <a class="workButton" href="{{ url_for('minutes', num=25) }}">25 Minutes</a>
-        <a class="restButton" href="{{ url_for('minutes', num=5) }}">5 Minutes</a>
+        <a class="tenButton" href="{{ url_for('minutes', num=10) }}">10 Minutes</a>
+        <a class="twentyButton" href="{{ url_for('minutes', num=20) }}">20 Minutes</a>
+        <a class="thirtyButton" href="{{ url_for('minutes', num=30) }}">30 Minutes</a>
         <a class="helpButton" id="help-btn">?</a>
 
         {% for message in get_flashed_messages() %}
@@ -53,13 +51,6 @@
         var Minutes = {{ num }};
     </script>
 
-
-    <script type="text/javascript">
-        function parseQuote(response) {
-            document.getElementById("quote").innerHTML = response.quoteText;
-            document.getElementById("author").innerHTML = response.quoteAuthor;
-        }
-    </script>
 
     <script type="text/javascript"
             src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote"

@@ -78,36 +78,32 @@ Arms = [
 ]
 
 Back = [
-    'Bodyweight Back Extensions',
-    'Bodyweight Single Leg Up and Down Dogs',
-    'Bodyweight Cross Body Extension'
+    'Back-Extensions',
+    'Single-Leg-Up-Down-Dogs',
+    'Cross-Body-Extension'
 ]
 
 Chest = [
-    'Bodyweight Push Ups',
-    'Bodyweight T Push Ups',
-    'Bodyweight Mountain Climber Push Ups'
+    'Push-Ups',
+    'T-Push-Ups',
+    'Mountain-Climber-Push-Ups'
 ]
 
 Legs = [
-    'Bodyweight Y Squats',
-    'Bodyweight Single Leg Deadlift',
-    'Bodyweight Bridge',
-    'Bodyweight Forward Lunge',
-    'Bodyweight Lateral Squat',
-    'Bodyweight Static Lunge',
-    'Bodyweight Yoga Squat',
-    'Bodyweight Single Leg Deadlift with Overhead Reach',
-    'Bodyweight Burpees',
-    'Bodyweight Jump Squats',
-    'Bodyweight Reverse Lunge and Hop',
-    'Bodyweight Jumping Lunges',
-    'Bodyweight Single Leg Burpee'
+    'Y-Squats',
+    'Single-Leg-Deadlift',
+    'Bridge',
+    'Forward-Lunge',
+    'Lateral-Squat',
+    'Static-Lunge',
+    'Yoga-Squat',
+    'Single-Leg-Deadlift-Overhead-Reach',
+    'Burpees',
+    'Jump-Squats',
+    'Reverse-Lunge-Hop',
+    'Jumping-Lunges',
+    'Single-Leg-Burpee'
 ]
-
-
-
-# Stretches = []
 
 
 UpperBody = Arms + Back + Chest
@@ -118,9 +114,6 @@ LowerBody = Legs
 
 FullBody = UpperBody + CoreBody + LowerBody
 
-
-# user select ...
-# Duration = {easy:10, medium:20, hard:30}
 
 import time
 
@@ -137,14 +130,14 @@ def countdown(t):
 
 def demo(muscle, duration):
     counter = 0
-    if duration == 'easy':
+    if duration == 'ten':
         while counter < 10:
             print(random.choice(muscle))
             counter += 1
             countdown(2)
         else:
             print('YAY, U NOT FAT!')
-    elif duration == 'medium':
+    elif duration == 'twenty':
         while counter < 20:
             print(random.choice(muscle))
             counter += 1
@@ -161,14 +154,8 @@ def demo(muscle, duration):
 
 
 
-
-# muscle = input('Select Muscle Group: ')
-# duration = input('Select your duration: ')
-
-
-
 def main():
-    demo(FullBody, 'easy')
+    demo(FullBody, 's')
 
 #     muscle = input('Select Muscle Group: ')
 #     duration = input('Select your duration: ')
