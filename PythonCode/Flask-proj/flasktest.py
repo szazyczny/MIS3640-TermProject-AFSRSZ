@@ -10,10 +10,12 @@ app.config['DEBUG'] = True
 
 app.secret_key = "Some secret string here"
 
+d = {'side-plank': "https://kettlebellsworkouts.com/wp-content/uploads/2018/06/36_side_plank_with_extension.png",
+''}
 
-@app.route('/')
-def home():
-    return render_template('home.html')
+@app.route('/<action>')
+def home(action):
+    return render_template('home.html', action=d[action])
 
 # POST user request sent to backend 
 # @app.route('/workout/', methods=['GET', 'POST'])

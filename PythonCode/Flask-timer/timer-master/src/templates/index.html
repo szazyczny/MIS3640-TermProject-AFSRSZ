@@ -1,0 +1,69 @@
+{% block head %}
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+
+{% block page_content %}
+    <audio id="over_music">
+        <source src="{{ url_for('static', filename='beepbeep.mp3') }}">
+    </audio>
+
+    <div>
+        <form method="POST" action="{{ url_for('custom') }}" style="display:inline">
+            <input name="time" class="time-input" placeholder="e.g. 12/30s/20m/2h">
+            <input type="submit" class="startButton" value="START">
+        </form>
+        <a class="workButton" href="{{ url_for('minutes', num=25) }}">25 Minutes</a>
+        <a class="restButton" href="{{ url_for('minutes', num=5) }}">5 Minutes</a>
+        <a class="helpButton" id="help-btn">?</a>
+
+        {% for message in get_flashed_messages() %}
+            <div class="alert-info">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="usage" id="help-info">
+            <h3>A Timer Demo</h3><br>
+        </div>
+    </div>
+
+    <div>
+        {#% if True %}yay{% endif %#}
+    </div>
+
+    <div class="timer">
+        <p id="time"></p>
+    </div>
+
+    <div class="quote">
+        <p id="quote"></p>
+        <i id="author"></i>
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/jquery-3.2.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+    <script>
+        var Minutes = {{ num }};
+    </script>
+
+
+    <script type="text/javascript">
+        function parseQuote(response) {
+            document.getElementById("quote").innerHTML = response.quoteText;
+            document.getElementById("author").innerHTML = response.quoteAuthor;
+        }
+    </script>
+
+    <script type="text/javascript"
+            src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote"
+            async>
+    </script>
+{% endblock %}
+
