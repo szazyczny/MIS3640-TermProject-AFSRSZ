@@ -1,6 +1,8 @@
 body {
-    font-family: PingFangSC-Light, 'helvetica neue', 'hiragino sans gb', tahoma,
-    'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+    font-family: "Optima", sans-serif;
+    background-color: lightblue;
+    text-align: center;
+       
 }
 
 .time-input {
@@ -21,8 +23,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: Arial;
-    font-size: 12px;
+    font-size: 20px;
     padding: 5px 16px;
     text-decoration: none;
     text-shadow: 0 1px 0 #528ecc;
@@ -49,9 +50,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: Arial;
     font-size: 15px;
-    font-weight: bold;
     padding: 6px 7px;
     text-decoration: none;
     text-shadow: 0 1px 0 #b23e35;
@@ -78,7 +77,6 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: Arial;
     font-size: 15px;
     font-weight: bold;
     padding: 6px 7px;
@@ -128,8 +126,8 @@ body {
 .timer {
     height: 85%;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    position: absolute;
+    margin-bottom: 1000px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -137,8 +135,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: FranklinGothic, Verdana, Arial, sans-serif;
-    font-size: 120px;
+    font-size: 50px;
     font-weight: bold;
     color: #000;
 }
@@ -165,6 +162,7 @@ body {
 @media (min-width: 280px) {
     .timer {
         font-size: 70px;
+        align-items: center;
     }
 
     .alert-info {
@@ -178,7 +176,8 @@ body {
 
 @media (min-width: 768px) {
     .timer {
-        font-size: 100px;
+        font-size: 20px;
+        align-items: center;
     }
 
     .quote {
@@ -189,6 +188,7 @@ body {
 @media (min-width: 980px) {
     .timer {
         font-size: 120px;
+        align-items: center;
     }
 
     .quote {
@@ -198,7 +198,9 @@ body {
 
 @media (min-width: 1200px) {
     .timer {
-        font-size: 150px;
+        font-size: 20px;
+        align-items: center;
+
     }
 
     .quote {

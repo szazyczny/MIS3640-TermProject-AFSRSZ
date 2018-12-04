@@ -1,5 +1,5 @@
 # in powershell terminal
-# $env:FLASK_APP = ".py"
+# $env:FLASK_APP = "flasktest.py"
 # flask run
 
 from flask import Flask, render_template, request

@@ -1,3 +1,6 @@
+
+<h1>Dorm Room Fitness For You! Select a time to start!</h1>
+
 {% block head %}
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +16,9 @@
 
     <div>
         </form>
-        <a class="tenButton" href="{{ url_for('minutes', num=10) }}">10 Minutes</a>
-        <a class="twentyButton" href="{{ url_for('minutes', num=20) }}">20 Minutes</a>
-        <a class="thirtyButton" href="{{ url_for('minutes', num=30) }}">30 Minutes</a>
+        <a class="tenButton" href="{{ url_for('minutes', num=10) }}">10 Minute Workout, I'm in a rush!</a>
+        <a class="twentyButton" href="{{ url_for('minutes', num=20) }}">20 Minute Workout, I 've got some time!</a>
+        <a class="thirtyButton" href="{{ url_for('minutes', num=30) }}">30 Minutes, I'm ready for a full body workout!</a>
         <a class="helpButton" id="help-btn">?</a>
 
         {% for message in get_flashed_messages() %}
@@ -25,7 +28,7 @@
         {% endfor %}
 
         <div class="usage" id="help-info">
-            <h3>A Timer Demo</h3><br>
+            <h3>Select a time that you would like to workout for!</h3><br>
         </div>
     </div>
 
@@ -37,10 +40,11 @@
         <p id="time"></p>
     </div>
 
-    <div class="quote">
-        <p id="quote"></p>
-        <i id="author"></i>
+    <div class="timer">
+        <img src="{{ action }}" height="400">
     </div>
+
+
 {% endblock %}
 
 
@@ -57,4 +61,3 @@
             async>
     </script>
 {% endblock %}
-
