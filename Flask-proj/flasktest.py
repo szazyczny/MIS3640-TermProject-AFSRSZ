@@ -54,10 +54,14 @@ d = {
     'Single-Leg-Burpee':'https://kettlebellsworkouts.com/wp-content/uploads/2018/06/50_single_leg_burpee.png'
 }
 
-@app.route('/<action>')
-def home(action):
-    return render_template('home.html', action=d[action])
 
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/<action>')
+def actionapp(action):
+    return render_template('home.html', action=d[action])
 
 # if __name__ == '__main__':
 #     app.run()

@@ -1,23 +1,26 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Workout</title>
 </head>
 <body>
-<h1>Workout</h1>
-<form method="POST" name="Workout">
-    <p></p>
-    <p>
-        Please enter your Muscle Group and Duration selections:
-    </p>
-    <p>
-        <input type="text" size="4" name='Muscle Group'>
-        <input type="text" size="4" name='Duration'>
-    </p>
-    <p>
-        <input type="submit" value="Magic Happens">
-    </p>
-</form>
+    <h1>Welcome to the Random Fitness Generator</h1>
+    <form method="POST" name="calculator">
+        {% if error %}
+        <p style='color:red'>Error.</p>
+        {% endif %}
+        <p>
+            Please enter muscle group:
+        </p>
+        <p>
+            <input type="text" size="4" name='a'>
+        </p>
+        <p>
+            <input type="submit" value="Magic Happens">
+        </p>
+    </form>
 </body>
 </html>
+
+    <img src="{{ action }}" height="400">

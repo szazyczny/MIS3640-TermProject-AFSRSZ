@@ -59,7 +59,7 @@ def index():
 
 @app.route('/<int:num>s')
 @app.route('/<int:num>')
-def timer(num, action):
+def timer(num):
     return render_template('index.html', num=num)
 
 
