@@ -1,6 +1,6 @@
 
-<h1>Dorm Room Fitness For You! Select a time to start!</h1>
-<!-- <img src="{{ action }}" height="400" alt="kk"> -->
+<h1>Dorm Room Fitness For You! Select a time and muscle group to start!!!!!</h1>
+
 
 {% block head %}
     <title></title>
@@ -17,30 +17,31 @@
 
     <div>
         </form>
-        <a class="tenButton" href="{{ url_for('minutes', num=10) }}">10 Minute Workout, I'm in a rush!</a>
-        <a class="twentyButton" href="{{ url_for('minutes', num=20) }}">20 Minute Workout, I 've got some time!</a>
-        <a class="thirtyButton" href="{{ url_for('minutes', num=30) }}">30 Minutes, I'm ready for a full body workout!</a>
-        <a class="helpButton" id="help-btn">?</a>
-
-        {% for message in get_flashed_messages() %}
-            <div class="alert-info">
-                {{ message }}
-            </div>
-        {% endfor %}
+        <a class="tenButton" href="{{ url_for('minutes', num=10) }}">10 Minute Workout </a>
+        <a class="twentyButton" href="{{ url_for('minutes', num=20) }}">20 Minute Workout </a>
+        <a class="thirtyButton" href="{{ url_for('minutes', num=30) }}">30 Minutes </a> 
+        <br>
 
         <div class="usage" id="help-info">
             <h3>Select a time that you would like to workout for!</h3><br>
         </div>
     </div>
 
+
+    
     <div>
         {#% if True %}yay{% endif %#}
     </div>
-
+<div>
     <div class="timer">
         <p id="time"></p>
     </div>
-
+    <div class='image'>
+        
+        <img src={{ actionImage}} alt="" title= {{ action }}>
+        <p>Current Action: {{ action }}</p>
+    </div>
+</div>
 {% endblock %}
 
 
@@ -48,12 +49,11 @@
     <script src="{{ url_for('static', filename='js/jquery-3.2.0.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
     <script>
-        var Minutes = {{ num }};
+        var Minutes = {{num}};
     </script>
 
 
-    <script type="text/javascript"
-            src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote"
-            async>
-    </script>
+
 {% endblock %}
+
+

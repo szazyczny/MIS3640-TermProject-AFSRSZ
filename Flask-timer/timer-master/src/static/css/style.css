@@ -125,8 +125,9 @@ body {
 
 .timer {
     height: 85%;
-    width: 100%;
-    position: absolute;
+    width: 60%;
+    float: left;
+    position: relative;
     margin-bottom: 1000px;
     display: -webkit-box;
     display: -moz-box;
@@ -138,6 +139,13 @@ body {
     font-size: 50px;
     font-weight: bold;
     color: #000;
+}
+
+.image{
+    width: 30%;
+    float:right;
+    position: relative;
+    
 }
 
 .quote {
