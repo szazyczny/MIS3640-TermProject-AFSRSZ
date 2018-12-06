@@ -129,6 +129,13 @@ def timer(num, action=None):
     actionImage = d[action]
     return render_template('index.html', num=num, action=action, actionImage=actionImage)
 
+# @app.route('/<int:num>s/<action>')
+# @app.route('/<int:num>/<action>')
+# def timer(num):
+#     action = random.choice(FullBody)
+#     actionImage = d[action]
+#     return render_template('index.html', num=num, action=action, actionImage=actionImage)
+
 
 @app.route('/custom', methods=['GET', 'POST'])
 def custom():
@@ -161,44 +168,71 @@ def page_not_found(e):
     return redirect(url_for('timer', num=244, action='Bird-Dog'))
 
 
-import time
+# @app.route('/exercise')
+# def demo(muscle=FullBody, duration='ten'):
+#     counter = 0
+#     if duration == 'ten':
+#         while counter < 10:
+#             action = random.choice(muscle)
+#             print(action)
+#             return redirect(url_for('timer', num=7, action=action))
+#             counter += 1
 
 
-def countdown(t):
-    while t:
-        mins, secs = divmod(t, 60)
-        timeformat = '{:02d}:{:02d}'.format(mins, secs)
-        print(timeformat, end='\r')
-        time.sleep(1)
-        t -= 1
-    print('Next!\n\n')
+# @app.route('/exercise')
+# def demo(muscle=FullBody, duration='ten'):
+#     counter = 0
+#     if duration == 'ten':
+#         while counter < 10:
+#             action = random.choice(muscle)
+#             print(action)
+#             return redirect(url_for('timer', num=7, action=action))
+#             counter += 1
+#         else:
+#             print('YAY, U NOT FAT!')
+#     elif duration == 'twenty':
+#         while counter < 20:
+#             print(random.choice(muscle))
+#             counter += 1
+         
+#         else:
+#             print('YAY, U NOT FAT!')
+#     else:
+#         while counter < 30:
+#             print(random.choice(muscle))
+#             counter += 1
 
+#         else:
+#             print('YAY, U NOT FAT!')
+
+
+# changes the action
 @app.route('/exercise')
-def demo(muscle=FullBody, duration='ten'):
-    counter = 0
-    if duration == 'ten':
-        while counter < 10:
-            action = random.choice(muscle)
-            print(action)
-            return redirect(url_for('timer', num=5, action=action))
-            counter += 1
-            countdown(5)
-        else:
-            print('YAY, U NOT FAT!')
-    elif duration == 'twenty':
-        while counter < 20:
-            print(random.choice(muscle))
-            counter += 1
-            countdown(2)
-        else:
-            print('YAY, U NOT FAT!')
-    else:
-        while counter < 30:
-            print(random.choice(muscle))
-            counter += 1
-            countdown(2)
-        else:
-            print('YAY, U NOT FAT!')
+def demo(num, muscle=FullBody):
+    # counter = 0
+    
+    # if duration == 'ten':
+        # action_set = random.sample(muscle, 10)
+        # while (counter < 10):
+    action = random.choice(muscle)
+    print(action)
+    # timer(num, action)
+
+            # counter += 1
+            # return redirect(url_for('timer', num=1, action=action))
+
+    #     else:
+    #         print('YAY, U NOT FAT!')
+
+    # else:
+    #     print('Not yet implemented')
+
+# def oneExercise(act):
+#     return redirect(url_for("timer", num=7, action=act))
+
+
+
+
 
 
 if __name__ == '__main__':
