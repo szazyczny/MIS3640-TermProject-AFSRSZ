@@ -118,7 +118,7 @@ FullBody = UpperBody + CoreBody + LowerBody
     
 @app.route('/')
 def index():
-    return redirect(url_for('timer', num=1500, action='Bird-Dog'))
+    return redirect(url_for('demo'))
 
 
 @app.route('/<int:num>s/<action>')
@@ -179,47 +179,49 @@ def page_not_found(e):
 #             counter += 1
 
 
-# @app.route('/exercise')
-# def demo(muscle=FullBody, duration='ten'):
-#     counter = 0
-#     if duration == 'ten':
-#         while counter < 10:
-#             action = random.choice(muscle)
-#             print(action)
-#             return redirect(url_for('timer', num=7, action=action))
-#             counter += 1
-#         else:
-#             print('YAY, U NOT FAT!')
-#     elif duration == 'twenty':
-#         while counter < 20:
-#             print(random.choice(muscle))
-#             counter += 1
+@app.route('/exercise')
+def demo(muscle=FullBody):
+    action = random.choice(muscle)
+    return redirect(url_for('timer', num=5, action=action))
+    # counter = 0
+    # if duration == 'ten':
+    #     while counter < 10:
+    #         action = random.choice(muscle)
+    #         print(action)
+    #         return redirect(url_for('timer', num=3, action=action))
+    #         counter += 1
+    #     else:
+    #         print('YAY, U NOT FAT!')
+    # elif duration == 'twenty':
+    #     while counter < 20:
+    #         print(random.choice(muscle))
+    #         counter += 1
          
-#         else:
-#             print('YAY, U NOT FAT!')
-#     else:
-#         while counter < 30:
-#             print(random.choice(muscle))
-#             counter += 1
+    #     else:
+    #         print('YAY, U NOT FAT!')
+    # else:
+    #     while counter < 30:
+    #         print(random.choice(muscle))
+    #         counter += 1
 
-#         else:
-#             print('YAY, U NOT FAT!')
+    #     else:
+    #         print('YAY, U NOT FAT!')
 
 
 # changes the action
-@app.route('/exercise')
-def demo(num, muscle=FullBody):
+# @app.route('/exercise')
+# def demo(num, muscle=FullBody):
     # counter = 0
     
     # if duration == 'ten':
         # action_set = random.sample(muscle, 10)
         # while (counter < 10):
-    action = random.choice(muscle)
-    print(action)
+    # action = random.choice(muscle)
+    # print(action)
     # timer(num, action)
 
             # counter += 1
-            # return redirect(url_for('timer', num=1, action=action))
+    # return redirect(url_for('timer', num=1, action=action))
 
     #     else:
     #         print('YAY, U NOT FAT!')

@@ -15,7 +15,7 @@
         <source src="{{ url_for('static', filename='beepbeep.mp3') }}">
     </audio>
 
-    <div>
+    <!-- <div>
         </form>
         <a class="tenButton" href="{{ url_for('minutes', num=10) }}">10 Minute Workout </a>
         <a class="twentyButton" href="{{ url_for('minutes', num=20) }}">20 Minute Workout </a>
@@ -25,17 +25,19 @@
         <div class="usage" id="help-info">
             <h3>Select a time that you would like to workout for!</h3><br>
         </div>
-    </div>
+    </div> -->
 
 
-    
+
     <div>
         {#% if True %}yay{% endif %#}
     </div>
 <div>
-    <div class="timer">
-        <a href="{{ url_for('timer',num=3,action=action)}}" id="time" ></a>
-    </div>
+   
+        <div class="timer">
+            <a href="{{ url_for('demo')}}" id="time" ></a>
+        </div>
+    
     <div class='image'>
         
         <img src={{ actionImage}} alt="" title= {{ action }}>
