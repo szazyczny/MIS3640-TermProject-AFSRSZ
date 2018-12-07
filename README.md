@@ -1,6 +1,8 @@
 # MIS3640-TermProject-AFSRSZ
 MIS3640 Term Project
 
+Website: https://sites.google.com/babson.edu/dorm-room-fitness-mis3640
+
 The Project:
 The main idea for our project is an application or website to help college students work out in limited space (like dorm room) and with limited time. The idea for this program is to simulate a magic 8 ball). A magic 8 ball displays a random answer from a predetermined pool of options. This is what we want to do but instead of generating random answers to questions, our program will generate random sets of exercises. Our minimum viable product (MVP) is a program that will generate a random yet predetermined set of exercises for a full body workout. With the MVP the user can prompt the program to display a set of exercises that the user will perform. Our stretch goal would be to have a program that even though it will generate random exercise sets, it stays within the parameters set by the user regarding the type of workout they want to perform. For example, the user can choose to do a workout that exercises only legs and core and they could choose to do a short or long workout, and the program will generate random sets of exercises that still meet these requirements.
 
@@ -15,5 +17,3 @@ Demo function: Takes the muscle group and picks a randome excercise from the mus
 Developed UI using index.html under the template folder as well as style.css and timer.js under the static folder.
 The display includes a title heading, the timer (button), exercise image, and current action name.
 The application will select a random exercise to display for 60 seconds. When time's up the user can click "Time's Up" for another random exercise to be generated. The user has the ability to complete as many exercises as desired.
-
-
