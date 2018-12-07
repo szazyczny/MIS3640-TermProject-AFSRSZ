@@ -160,20 +160,31 @@ def timer(num, action=None):
 #         return redirect(url_for(types[time[-1]], num=int(time[:-1])))
 
 
-# @app.route('/<int:num>m')
-# def minutes(num):
-#     return redirect(url_for('timer', num=num * 60, action='Bird-Dog'))
+@app.route('/<int:num>m')
+def minutes(num):
+    """
+    Generates a URL for timer. It calculates the minutes in the time inputed for timer by multiplying the
+    seconds by 60.
+    """
+    return redirect(url_for('timer', num=num * 60, action='Bird-Dog'))
 
 
-# @app.route('/<int:num>h')
-# def hours(num):
-#     return redirect(url_for('timer', num=num * 3600, action='Bird-Dog'))
+@app.route('/<int:num>h')
+def hours(num):
+    """
+    Generates a URL for timer. It calculates the hours in the time inputed for timer by multiplying the
+    seconds by 3600.
+    """
+    return redirect(url_for('timer', num=num * 3600, action='Bird-Dog'))
 
 
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     flash('Error! ')
-#     return redirect(url_for('timer', num=244, action='Bird-Dog'))
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    Displays an error flash message if page is not found.
+    """
+    flash('Error! ')
+    return redirect(url_for('timer', num=244, action='Bird-Dog'))
 
 
 # @app.route('/exercise')
