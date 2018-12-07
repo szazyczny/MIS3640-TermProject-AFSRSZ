@@ -119,6 +119,9 @@ import time
 
 
 def countdown(t):
+    """
+    Takes the time a creates a countdown.
+    """
     while t:
         mins, secs = divmod(t, 60)
         timeformat = '{:02d}:{:02d}'.format(mins, secs)
@@ -129,33 +132,41 @@ def countdown(t):
 
 
 def demo(muscle, duration):
+    """
+    Takes muscle group and duration of workout desired. It generates a random exercise from the muscle group list.
+    One exercise is generated per minute of the duration. Each minute, a new exercise comes up and a one minute timer
+    starts. This continues until the workout is over (determined by duration) and a culmination message shows up.
+    """
     counter = 0
     if duration == 'ten':
         while counter < 10:
             print(random.choice(muscle))
             counter += 1
-            countdown(2)
+            countdown(60)
         else:
             print('YAY, U NOT FAT!')
     elif duration == 'twenty':
         while counter < 20:
             print(random.choice(muscle))
             counter += 1
-            countdown(2)
+            countdown(60)
         else:
             print('YAY, U NOT FAT!')
     else:
         while counter < 30:
             print(random.choice(muscle))
             counter += 1
-            countdown(2)
+            countdown(60)
         else:
             print('YAY, U NOT FAT!')
 
 
 
 def main():
-    demo(FullBody, 's')
+    """
+    Runs th edemo function for a ten minute full body workout.
+    """
+    demo(FullBody, 'ten')
 
 #     muscle = input('Select Muscle Group: ')
 #     duration = input('Select your duration: ')
