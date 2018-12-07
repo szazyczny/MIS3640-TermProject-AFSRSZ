@@ -118,12 +118,20 @@ FullBody = UpperBody + CoreBody + LowerBody
     
 @app.route('/')
 def index():
+    """
+    Generates a URL that connects the python code to a web app to display the resullts.
+    """
     return redirect(url_for('demo'))
 
 
 @app.route('/<int:num>s/<action>')
 @app.route('/<int:num>/<action>')
 def timer(num, action=None):
+    """
+    Takes a time (num) and an action (if no action, default action is Shoulder-Taps). Pulls the image of the
+    action by getting the value of the actio (key) which is the link for the image. Returns The index function
+    to display the action, timer and image.
+    """
     if action is None:
         action = 'Shoulder-Taps'
     actionImage = d[action]
@@ -137,33 +145,44 @@ def timer(num, action=None):
 #     return render_template('index.html', num=num, action=action, actionImage=actionImage)
 
 
-@app.route('/custom', methods=['GET', 'POST'])
-def custom():
-    time = request.form.get('time', 180)
-    # use re to validate input data
-    m = re.match('\d+[smh]?$', time)
-    if m is None:
-        flash('Please enter a valid time duration, for example, 34, 20s, 15m, 2h')
-        return redirect(url_for('index'))
-    if time[-1] not in 'smh':
-        return redirect(url_for('timer', num=int(time), action='Bird-Dog'))
-    else:
-        types = {'s': 'timer', 'm': 'minutes', 'h': 'hours'}
-        return redirect(url_for(types[time[-1]], num=int(time[:-1])))
+# @app.route('/custom', methods=['GET', 'POST'])
+# def custom():
+#     time = request.form.get('time', 180)
+#     # use re to validate input data
+#     m = re.match('\d+[smh]?$', time)
+#     if m is None:
+#         flash('Please enter a valid time duration, for example, 34, 20s, 15m, 2h')
+#         return redirect(url_for('index'))
+#     if time[-1] not in 'smh':
+#         return redirect(url_for('timer', num=int(time), action='Bird-Dog'))
+#     else:
+#         types = {'s': 'timer', 'm': 'minutes', 'h': 'hours'}
+#         return redirect(url_for(types[time[-1]], num=int(time[:-1])))
 
 
 @app.route('/<int:num>m')
 def minutes(num):
+    """
+    Generates a URL for timer. It calculates the minutes in the time inputed for timer by multiplying the
+    seconds by 60.
+    """
     return redirect(url_for('timer', num=num * 60, action='Bird-Dog'))
 
 
 @app.route('/<int:num>h')
 def hours(num):
+    """
+    Generates a URL for timer. It calculates the hours in the time inputed for timer by multiplying the
+    seconds by 3600.
+    """
     return redirect(url_for('timer', num=num * 3600, action='Bird-Dog'))
 
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """
+    Displays an error flash message if page is not found.
+    """
     flash('Error! ')
     return redirect(url_for('timer', num=244, action='Bird-Dog'))
 
@@ -181,8 +200,12 @@ def page_not_found(e):
 
 @app.route('/exercise')
 def demo(muscle=FullBody):
+    """
+    Takes the muscle group and picks a randome excercise from the muscle group list. Generates a URL
+    to connect the results of the Timer function in the web application.
+    """
     action = random.choice(muscle)
-    return redirect(url_for('timer', num=5, action=action))
+    return redirect(url_for('timer', num=60, action=action))
     # counter = 0
     # if duration == 'ten':
     #     while counter < 10:

@@ -134,23 +134,23 @@ def demo(muscle, duration):
         while counter < 10:
             print(random.choice(muscle))
             counter += 1
-            countdown(2)
+            countdown(60)
         else:
-            print('YAY, U NOT FAT!')
+            print('Done!')
     elif duration == 'twenty':
         while counter < 20:
             print(random.choice(muscle))
             counter += 1
-            countdown(2)
+            countdown(60)
         else:
-            print('YAY, U NOT FAT!')
+            print('Done!')
     else:
         while counter < 30:
             print(random.choice(muscle))
             counter += 1
-            countdown(2)
+            countdown(60)
         else:
-            print('YAY, U NOT FAT!')
+            print('Done!')
 
 
 
